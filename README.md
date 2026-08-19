@@ -3,6 +3,8 @@
 Projeto individual da disciplina, com o objetivo de automatizar testes de um
 programa simples usando **JUnit 6** e **Maven**.
 
+# Um pangrama é uma frase que usa todas as letras do alfabeto de uma língua. Ele serve para testar teclados e máquinas de escrever, mostrar fontes de letras em computadores, treinar a caligrafia ou avaliar equipamentos de comunicação.
+
 ## Enunciado escolhido
 
 - **Plataforma:** [CodeWars](https://www.codewars.com)
