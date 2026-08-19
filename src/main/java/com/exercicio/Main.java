@@ -14,7 +14,7 @@ public class Main {
         String sentence = scanner.nextLine();
 
         PangramChecker pangramChecker = new PangramChecker();
-        boolean result = pangramChecker.isPangram(sentence);
+        boolean result = pangramChecker.check(sentence);
 
         System.out.println(result);
         scanner.close();

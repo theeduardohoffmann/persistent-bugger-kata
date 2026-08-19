@@ -25,29 +25,29 @@ class PangramCheckerTest {
     @Test
     @DisplayName("Frase com todas as letras do alfabeto deve ser um pangram")
     void classicPangramReturnsTrue() {
-        assertTrue(pangramChecker.isPangram("The quick brown fox jumps over the lazy dog"));
+        assertTrue(pangramChecker.check("The quick brown fox jumps over the lazy dog"));
     }
 
     @Test
     @DisplayName("Frase sem todas as letras nao deve ser um pangram")
     void notAllLettersReturnsFalse() {
-        assertFalse(pangramChecker.isPangram("This is not a pangram"));
+        assertFalse(pangramChecker.check("This is not a pangram"));
     }
 
     @Test
     @DisplayName("Deve ignorar maiusculas e minusculas")
     void isCaseInsensitive() {
-        assertTrue(pangramChecker.isPangram("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"));
+        assertTrue(pangramChecker.check("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"));
     }
 
     @Test
     @DisplayName("String nula deve lancar excecao")
     void nullSentenceThrowsException() {
-        assertThrows(IllegalArgumentException.class, () -> pangramChecker.isPangram(null));
+        assertThrows(IllegalArgumentException.class, () -> pangramChecker.check(null));
     }
 
     // Teste parametrizado: varios casos de entrada/saida rodados de uma vez so.
-    @ParameterizedTest(name = "isPangram(\"{0}\") deve ser {1}")
+    @ParameterizedTest(name = "check(\"{0}\") deve ser {1}")
     @DisplayName("Casos de teste variados para o pangram")
     @CsvSource({
             "'The quick brown fox jumps over the lazy dog', true",
@@ -58,6 +58,6 @@ class PangramCheckerTest {
             "'Hello world',                                  false"
     })
     void variousPangramCases(String sentence, boolean expected) {
-        assertEquals(expected, pangramChecker.isPangram(sentence));
+        assertEquals(expected, pangramChecker.check(sentence));
     }
 }
